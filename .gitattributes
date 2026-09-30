@@ -1,0 +1,14 @@
+* text=auto
+*.py text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.json text
+*.md text
+*.yml text
+*.yaml text
+*.css text
+*.html text
+*.sh text eol=lf
+*.bat text eol=crlf

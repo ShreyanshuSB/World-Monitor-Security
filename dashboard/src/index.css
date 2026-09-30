@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+:root {
+  /* Dark Theme Tokens (Default) */
+  --bg-app: #0D1014;
+  --bg-surface: #14181E;
+  --bg-raised: #1A2028;
+  --bg-hover: #1F2630;
+  --border-subtle: #222A34;
+  --border-strong: #2E3846;
+  --text-primary: #E8ECF2;
+  --text-secondary: #A3ADBB;
+  --text-tertiary: #6F7B8B;
+  --accent: #7C9CFF;
+
+  /* Severity Muted Scale */
+  --severity-critical: #F26D78;
+  --severity-critical-bg: rgba(242, 109, 120, 0.12);
+  --severity-critical-border: rgba(242, 109, 120, 0.28);
+
+  --severity-high: #F2A65A;
+  --severity-high-bg: rgba(242, 166, 90, 0.12);
+  --severity-high-border: rgba(242, 166, 90, 0.28);
+
+  --severity-medium: #E6C15A;
+  --severity-medium-bg: rgba(230, 193, 90, 0.12);
+  --severity-medium-border: rgba(230, 193, 90, 0.28);
+
+  --severity-low: #6FA8F0;
+  --severity-low-bg: rgba(111, 168, 240, 0.12);
+  --severity-low-border: rgba(111, 168, 240, 0.28);
+
+  --severity-info: #8A94A6;
+  --severity-info-bg: rgba(138, 148, 166, 0.12);
+  --severity-info-border: rgba(138, 148, 166, 0.28);
+
+  /* Status Colors */
+  --status-detected: #A3ADBB;
+  --status-detected-bg: rgba(163, 173, 187, 0.12);
+  --status-detected-border: rgba(163, 173, 187, 0.28);
+
+  --status-verified: #7C9CFF;
+  --status-verified-bg: rgba(124, 156, 255, 0.12);
+  --status-verified-border: rgba(124, 156, 255, 0.28);
+
+  --status-fixed: #52C48F;
+  --status-fixed-bg: rgba(82, 196, 143, 0.12);
+  --status-fixed-border: rgba(82, 196, 143, 0.28);
+
+  --status-retested-pass: #52C48F;
+  --status-retested-pass-bg: rgba(82, 196, 143, 0.12);
+  --status-retested-pass-border: rgba(82, 196, 143, 0.28);
+
+  --status-failed: #F26D78;
+  --status-failed-bg: rgba(242, 109, 120, 0.12);
+  --status-failed-border: rgba(242, 109, 120, 0.28);
+
+  font-family: 'Geist Sans', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  /* Light Theme Tokens */
+  --bg-app: #F7F8FA;
+  --bg-surface: #FFFFFF;
+  --bg-raised: #F0F2F5;
+  --bg-hover: #E9EDF2;
+  --border-subtle: #E1E4E8;
+  --border-strong: #D0D5DD;
+  --text-primary: #1C2024;
+  --text-secondary: #555F6D;
+  --text-tertiary: #7E8B9B;
+  --accent: #4F70E8;
+
+  --severity-critical: #D6424F;
+  --severity-critical-bg: rgba(214, 66, 79, 0.10);
+  --severity-critical-border: rgba(214, 66, 79, 0.25);
+
+  --severity-high: #D47926;
+  --severity-high-bg: rgba(212, 121, 38, 0.10);
+  --severity-high-border: rgba(212, 121, 38, 0.25);
+
+  --severity-medium: #BA9418;
+  --severity-medium-bg: rgba(186, 148, 24, 0.10);
+  --severity-medium-border: rgba(186, 148, 24, 0.25);
+
+  --severity-low: #3B7AD9;
+  --severity-low-bg: rgba(59, 122, 217, 0.10);
+  --severity-low-border: rgba(59, 122, 217, 0.25);
+
+  --severity-info: #6A7382;
+  --severity-info-bg: rgba(106, 115, 130, 0.10);
+  --severity-info-border: rgba(106, 115, 130, 0.25);
+
+  --status-detected: #6A7382;
+  --status-detected-bg: rgba(106, 115, 130, 0.10);
+  --status-detected-border: rgba(106, 115, 130, 0.25);
+
+  --status-verified: #4F70E8;
+  --status-verified-bg: rgba(79, 112, 232, 0.10);
+  --status-verified-border: rgba(79, 112, 232, 0.25);
+
+  --status-fixed: #2E9E6B;
+  --status-fixed-bg: rgba(46, 158, 107, 0.10);
+  --status-fixed-border: rgba(46, 158, 107, 0.25);
+
+  --status-retested-pass: #2E9E6B;
+  --status-retested-pass-bg: rgba(46, 158, 107, 0.10);
+  --status-retested-pass-border: rgba(46, 158, 107, 0.25);
+
+  --status-failed: #D6424F;
+  --status-failed-bg: rgba(214, 66, 79, 0.10);
+  --status-failed-border: rgba(214, 66, 79, 0.25);
+
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: 'Geist Sans', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabular numerals on all numbers, tables, and charts */
+table, [data-tabular-nums="true"], .tabular-nums, [data-chart] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Monospace font strictly for code, evidence, URLs, vectors, and diffs */
+code, pre, .font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, Monaco, Consolas, monospace !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle border and surface helper classes */
+.bg-app { background-color: var(--bg-app); }
+.bg-surface { background-color: var(--bg-surface); }
+.bg-raised { background-color: var(--bg-raised); }
+.bg-hover:hover { background-color: var(--bg-hover); }
+
+.border-subtle { border-color: var(--border-subtle); }
+.border-strong { border-color: var(--border-strong); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-accent { color: var(--accent); }
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Clean, unobtrusive scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}

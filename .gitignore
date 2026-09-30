@@ -1,0 +1,144 @@
+# ==============================================================================
+# World Monitor — Security Assessment Platform
+# SIH26163 / NTRO  |  Root .gitignore
+# ==============================================================================
+# Keep secrets, runtime state, build artefacts, and tooling noise out of VCS.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Python — bytecode & caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+*.pyo
+
+# ------------------------------------------------------------------------------
+# Python — virtual environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# Python — packaging / build artefacts
+# ------------------------------------------------------------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+pip-wheel-metadata/
+.eggs/
+
+# ------------------------------------------------------------------------------
+# Environment / secrets  (NEVER commit real .env files)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------------------------
+# Databases & runtime state  (SQLite files contain live assessment data)
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+engine/assessment.db
+lab/lab.db
+
+# ------------------------------------------------------------------------------
+# Generated reports & runtime artefacts
+# ------------------------------------------------------------------------------
+reports/*.pdf
+reports/generated/
+engine/*.db
+lab/*.db
+*.log
+logs/
+
+# ------------------------------------------------------------------------------
+# Frontend — Node / Vite / TypeScript
+# ------------------------------------------------------------------------------
+dashboard/node_modules/
+dashboard/dist/
+dashboard/dist-ssr/
+dashboard/.vite/
+dashboard/.cache/
+dashboard/coverage/
+*.tsbuildinfo
+
+# Lock files (keep package-lock.json for reproducibility; ignore yarn/pnpm)
+yarn.lock
+pnpm-lock.yaml
+
+# ------------------------------------------------------------------------------
+# OS & editor artefacts
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# Browser / Chromium / Edge crash artefacts
+# (edge_temp/ is committed as an empty placeholder; its runtime contents are not)
+# ------------------------------------------------------------------------------
+edge_temp/Crashpad/
+edge_temp/*.pma
+edge_temp/*.dat
+Crashpad/
+*.pma
+
+# ------------------------------------------------------------------------------
+# Uploads, temporary directories, scratch files
+# ------------------------------------------------------------------------------
+uploads/
+tmp/
+temp/
+scratch/
+*.tmp
+*.bak
+
+# ------------------------------------------------------------------------------
+# Internal agent / AI tooling files
+# (These are workspace-local instructions, not project source)
+# ------------------------------------------------------------------------------
+AGENTS.md
+CLAUDE.md
+.agents/
+
+# ------------------------------------------------------------------------------
+# Coverage & profiling
+# ------------------------------------------------------------------------------
+.coverage
+htmlcov/
+*.cover
+*.prof
+prof/
+
+# ------------------------------------------------------------------------------
+# Jupyter (in case notebooks are ever added)
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
